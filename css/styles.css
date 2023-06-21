@@ -20,8 +20,7 @@ button {
 
 .container {
     width: 1158px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
     margin: 0 auto;
 }
 
@@ -39,6 +38,14 @@ img {
     margin-bottom: 0;
 }
 
+.visually-hidden {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
 /* Header */
 
 .page-header {
@@ -50,8 +57,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 24px;
-    padding-bottom: 24px;
 }
 
 .nav-container {
@@ -63,8 +68,8 @@ img {
 .nav-list-container {
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-left: 76px;  
+    gap: 40px; 
+    padding: 24px 0;
 }
 
 .link {
@@ -83,6 +88,7 @@ img {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--PrimaryBrand);
+    margin-right: 76px;
 }
 
 .logo-studio {
@@ -133,7 +139,8 @@ color: var(--PressedState);
 /* Hero Content */
 
 .hero {
-    background-color: #2E2F42;;       
+    background-color: #2E2F42;
+    padding: 188px 0;
 }
 
 .hero-container {
@@ -141,12 +148,10 @@ color: var(--PressedState);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 188px;
-    padding-bottom: 188px;
 }
 
 .main-title-container {
-    width: 496px;
+    max-width: 496px;
     text-align: center;
 }
 
@@ -160,7 +165,7 @@ color: var(--PressedState);
 }
 
 .main-button-container {
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     align-items: center;
     margin-top: 48px;
@@ -185,10 +190,9 @@ color: var(--PressedState);
 
 /* Adventages */
 
-.adventages-container {
-padding-top: 120px;
-padding-bottom: 120px;
-}
+.adventages {
+padding: 120px 0;
+} 
 
 .adventages-list-container {
     display: flex;
@@ -196,10 +200,9 @@ padding-bottom: 120px;
     text-align: row;
     padding-left: 0;
     padding-right: 0;
-    
 }
 
-.adventages-list-container li {
+.adventages-item-container {
 flex-basis: 264px;
 }
 
@@ -224,7 +227,7 @@ flex-basis: 264px;
 
 /* Activity of the company */
 
-.activity-container {
+.activity {
     padding-bottom: 120px;
 }
 
@@ -234,7 +237,6 @@ flex-basis: 264px;
     gap: 24px;
     padding-left: 0;
     padding-right: 0;
-    padding-top: 72px;
 }
 
 .activity-title {
@@ -245,26 +247,24 @@ flex-basis: 264px;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--TextColor);
+    margin-bottom: 72px;
+}
+
+.activity-item-container {
+    flex-basis: calc((100% - 2 * 24px) / 3);
 }
 
 /* Team */
 
 .team-section {
     background-color: var(--Cloud);
-}
-
-.team-container {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding: 120px 0;
 }
 
 .team-list-container {
     display: flex;
     align-items: center;
     gap: 24px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 72px;
 }
 
 .team-title {
@@ -275,6 +275,7 @@ flex-basis: 264px;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: #2E2F42;
+    margin-bottom: 72px;
 }
 
 .team-component {
@@ -284,17 +285,22 @@ flex-basis: 264px;
         border-radius: 0px 0px 4px 4px;
 }
 
+.team-item {
+    padding: 32px 16px;
+}
+
 .list-title {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2E2F42;
-    margin-top: 32px;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .team-text {
+    text-align: center;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -304,22 +310,18 @@ flex-basis: 264px;
 
 /* Footer */
 
-.footer-container {
-    padding-top: 101.5px;
-    padding-bottom: 100px;
-}
-
 .page-footer {
     background: #2E2F42;;
+    padding: 100px 0
 }
 
 .logo-footer {
     color: #F4F4FD;
 }
 
-.footer-text-container {
-    width: 264px;
-    margin-top: 17.5px;
+.link-footer {
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .footer-text {
@@ -327,6 +329,7 @@ flex-basis: 264px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #F4F4FD;
+    max-width: 264px;
 }
 
 
@@ -340,12 +343,16 @@ flex-basis: 264px;
 
 /* Portfolio main*/
 
+.portfolio-main {
+    padding-top: 96px;
+    padding-bottom: 120px;
+}
+
 .buttons-list-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 24px;
-    padding-top: 96px;
     padding-bottom: 72px;
 }
 
@@ -379,7 +386,6 @@ flex-basis: 264px;
 .project-card-container {
     padding-left: 0;
     padding-right: 0;
-    padding-bottom: 120px;
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
